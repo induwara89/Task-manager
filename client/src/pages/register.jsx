@@ -14,7 +14,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('task-manager-production-79f5.up.railway.app', form)
+      await axios.post('https://task-manager-production-79f5.up.railway.app', form)
       navigate('/login')
     } catch (err) {
       setError(err.response.data.message)
