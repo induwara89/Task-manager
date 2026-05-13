@@ -16,7 +16,7 @@ function Dashboard() {
 
     const fetchTasks = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/tasks', { headers })
+            const res = await axios.get('task-manager-production-79f5.up.railway.app', { headers })
             setTasks(res.data)
         } catch (err) {
             console.log(err)
@@ -26,7 +26,7 @@ function Dashboard() {
     const createTask = async () => {
         if (!title) return
         try {
-            await axios.post('http://localhost:5000/api/tasks', { title, description, dueDate }, { headers })
+            await axios.post('task-manager-production-79f5.up.railway.app', { title, description, dueDate }, { headers })
             setTitle('')
             setDescription('')
             setDueDate('')
@@ -38,7 +38,7 @@ function Dashboard() {
 
     const deleteTask = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/tasks/${id}`, { headers })
+            await axios.delete(`task-manager-production-79f5.up.railway.app/${id}`, { headers })
             fetchTasks()
         } catch (err) {
             console.log(err)
@@ -47,7 +47,7 @@ function Dashboard() {
 
     const completeTask = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/tasks/${id}`, { status: 'completed' }, { headers })
+            await axios.put(`task-manager-production-79f5.up.railway.app/${id}`, { status: 'completed' }, { headers })
             fetchTasks()
         } catch (err) {
             console.log(err)
