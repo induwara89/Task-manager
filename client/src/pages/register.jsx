@@ -29,7 +29,7 @@ function Register() {
   return (
     <div style={styles.container}>
       <div style={styles.box}>
-        <div style={styles.logo}>🚀</div>
+        <div style={styles.logo}></div>
         <h2 style={styles.title}>Create Account</h2>
         <p style={styles.subtitle}>Start managing your tasks today</p>
         {error && <p style={styles.error}>{error}</p>}
