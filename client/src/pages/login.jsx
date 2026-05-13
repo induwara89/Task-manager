@@ -14,7 +14,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post('https://task-manager-production-79f5.up.railway.app', form)
+      const res = await axios.post('https://task-manager-production-79f5.up.railway.app/api/auth/login', form)
       localStorage.setItem('token', res.data.token)
       localStorage.setItem('user', JSON.stringify(res.data.user))
       navigate('/dashboard')

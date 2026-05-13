@@ -16,7 +16,7 @@ function Dashboard() {
 
     const fetchTasks = async () => {
         try {
-            const res = await axios.get('https://task-manager-production-79f5.up.railway.app', { headers })
+            const res = await axios.get('https://task-manager-production-79f5.up.railway.app/api/tasks', { headers })
             setTasks(res.data)
         } catch (err) {
             console.log(err)
@@ -26,7 +26,7 @@ function Dashboard() {
     const createTask = async () => {
         if (!title) return
         try {
-            await axios.post('https://task-manager-production-79f5.up.railway.app', { title, description, dueDate }, { headers })
+            await axios.post('https://task-manager-production-79f5.up.railway.app/api/tasks', { title, description, dueDate }, { headers })
             setTitle('')
             setDescription('')
             setDueDate('')
@@ -38,7 +38,7 @@ function Dashboard() {
 
     const deleteTask = async (id) => {
         try {
-            await axios.delete(`https://task-manager-production-79f5.up.railway.app/${id}`, { headers })
+            await axios.delete(`https://task-manager-production-79f5.up.railway.app/api/tasks/${id}`, { headers })
             fetchTasks()
         } catch (err) {
             console.log(err)
@@ -47,7 +47,7 @@ function Dashboard() {
 
     const completeTask = async (id) => {
         try {
-            await axios.put(`https://task-manager-production-79f5.up.railway.app/${id}`, { status: 'completed' }, { headers })
+            await axios.put(`https://task-manager-production-79f5.up.railway.app/api/tasks/${id}`, { status: 'completed' }, { headers })
             fetchTasks()
         } catch (err) {
             console.log(err)
