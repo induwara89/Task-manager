@@ -91,12 +91,15 @@ function Dashboard() {
                 <h3 style={styles.sectionTitle}>➕ Add New Task</h3>
                 <input style={styles.input} placeholder="Task title " value={title} onChange={(e) => setTitle(e.target.value)} />
                 <input style={styles.input} placeholder="Description " value={description} onChange={(e) => setDescription(e.target.value)} />
-                <input
-                    style={{ ...styles.input, colorScheme: 'dark' }}
-                    type="date"
-                    value={dueDate}
-                    onChange={(e) => setDueDate(e.target.value)}
-                />
+                <div style={{ marginBottom: '12px' }}>
+                    <label style={{ fontSize: '13px', color: '#94a3b8', marginBottom: '6px', display: 'block' }}> </label>
+                    <input
+                        style={styles.input}
+                        type="date"
+                        value={dueDate}
+                        onChange={(e) => setDueDate(e.target.value)}
+                    />
+                </div>
                 <button style={styles.addBtn} onClick={createTask}>Add Task </button>
             </div>
 
